@@ -1,0 +1,18 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": ["plugin:import/errors", "eslint:recommended", "p5js","p5js/dom","p5js/sound","prettier"], // prettier should be in last position
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "allowImportExportEverywhere": true,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/no-unresolved": [2, { "commonjs": true } ], // Ensures an imported module can be resolved to a module on the local filesystem
+    "no-only-tests/no-only-tests": "error", // Designed to prevent you from committing .only tests to CI, disabling tests for your whole team.
+    "prettier/prettier": "error"
+  },
+  "plugins": ["no-only-tests", "prettier"]
+}
