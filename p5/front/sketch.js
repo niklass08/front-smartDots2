@@ -28,7 +28,10 @@ function draw() {
   ellipse(WIDTH - 8, HEIGHT - 8, 20, 20);
   if (count === 500) {
     count = 0;
-    let value = smartDotsOptimizer().next().value;
+    let value;
+    for (let i = 0; i < 5; i++) {
+      value = smartDotsOptimizer().next().value;
+    }
     population = value.popPos;
     positions = value.positions;
     pos = createVector(0, 0);
